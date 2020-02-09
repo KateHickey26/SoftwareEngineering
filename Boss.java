@@ -1,10 +1,8 @@
-import java.util.Arrays;
-
 public class Boss extends Person {
     Lop workers = new Lop(10);
-    int workersIndex = 0;
+    int wIndex = 0;
 
-    Boss(String name, Date birthday) {
+    public Boss(String name, Date birthday) {
         super(name, birthday);
     }
 
@@ -17,18 +15,20 @@ public class Boss extends Person {
         workers.remove(w);
     }
 
-    // this method needs fixing
-//    public Worker next(){
-//        for(int i = 0; i<workers.length; i++){
-//            i = workersIndex;
-//            Worker w = (Worker)workers.getPerson(workersIndex);
-//            return w;
-//        }return null;
-//    }
+   //  this method needs fixing
+    public Worker next(){
+       // for(workersIndex = 0; workersIndex<workers.length; workersIndex++){
+        	// casting to Worker
+            Worker w = (Worker) workers.getPerson(wIndex);
+            wIndex++;
+            return w;
+     //   }return null;
+    }
     
     public void reset() {
-    	workersIndex = 0;
+    	wIndex = 0;
     }
 
 }
+
 
